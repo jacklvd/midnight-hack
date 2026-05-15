@@ -1,0 +1,30 @@
+pragma language_version >= 0.20;
+
+import CompactStandardLibrary;
+
+struct VerdictRecord {
+  score: Uint<64>,
+  model_id: Bytes<32>,
+  round: Uint<64>
+}
+
+struct AnalysisResult {
+  media_hash: Bytes<32>,
+  score: Uint<64>,
+  model_id: Bytes<32>
+}
+
+export ledger verdicts: Map<Bytes<32>, VerdictRecord>;
+export ledger round: Counter;
+
+witness getAnalysis(): AnalysisResult;
+
+export circuit recordVerdict(): [] {
+  const analysis = getAnalysis();
+  const hash = disclose(analysis.media_hash);
+  const score = disclose(analysis.score);
+  const modelId = disclose(analysis.model_id);
+  const currentRound = disclose(round as Field as Uint<64>);
+  verdicts.insert(hash, VerdictRecord { score: score, model_id: modelId, round: currentRound });
+  round.increment(1);
+}

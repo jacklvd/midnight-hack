@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../",
+  "sources": ["src/truthlens.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAAA;;;;;;;;;;;;;MAqBA,AAAA,aAQC;;;;;;;;;;;;;;;;;;;;;;OAAA;;;;GACA;EA9BD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAgBA;;;;;;;;;;yEAAsD;IACtD;;;;;;;;;yEAA6B;;;;;;;GAa5B;EAXD,AAAA,cAAsC;;0DAAtC,WAAsC;;;;;;;;;;;;;;GAAA;EAEtC,AAAA,gBAQC;UAPO,UAAwB;UACxB,MAAoC,GAApB,UAAQ;UACxB,OAAgC,GAAf,UAAQ;UACzB,SAAqC,GAAlB,UAAQ;UAC3B,cAAmD;;;;;sDAA3B;;;;;;;;;;;2HAAK;UACnC,KAAQ,YAAqC,OAAK,YAAY,SAAO,SAAS,cAAY;IAA1F;;;;;;;;;;2HAAgB,MAAI;;;2HAApB,KAAQ;;;wEAAA;UACR,KAAK;IAAL;;;;;;;;;;6FAAA,KAAK;;;;wEAAA;;GACN;;;;;;;;;;;;;;;;IAbD;;;;;uCAAA;;;;;;;;;;;;;;;;4GAAsD;;;;;;uCAAtD;;;;;;;;;;;;4GAAsD;;;;;;;;;;;;;;uCAAtD;;;;;;;;;;;;;;;4GAAsD;;;;;;;;;;;;;;uCAAtD;;;;;;;;;;;;;;;;;4GAAsD;;;;;;;;;KAAA;IACtD;qCAAA;;;;;;;;;;;0GAA6B;KAAA;;;;;;;;;;"
+}

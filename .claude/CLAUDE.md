@@ -64,14 +64,17 @@ TruthLens or D-Fake is a privacy-preserving deepfake detection dApp built on the
 
 ### Smart Contract
 - **Language:** Compact (Midnight's TypeScript-like DSL)
-- **Compiler:** `compact` CLI (v0.31.0+ recommended)
-- **Runtime:** `@midnight-ntwrk/compact-runtime` (^0.16.0)
-- **Proof server:** Docker — `midnightntwrk/proof-server` on port 6300
+- **Compiler:** `compact` CLI (compiler v0.31.0 via toolchain `compact` v0.5.1)
+- **Language version:** `pragma language_version >= 0.20;` in `.compact` files
+- **Runtime:** `@midnight-ntwrk/compact-runtime` `0.16.0` (must match compiler's emitted runtime)
+- **Proof server:** Docker — `midnightntwrk/proof-server:8.0.3` on port 6300
+- **Node:** Docker — `midnightntwrk/midnight-node:0.22.3` on port 9944
+- **Indexer:** Docker — `midnightntwrk/indexer-standalone:4.0.1` on port 8088
 
 ### Infrastructure (local dev)
 - **Docker services:**
   - Midnight Node: port 9944
-  - Indexer: port 8088 (GraphQL at `/api/v3/graphql`)
+  - Indexer: port 8088 (GraphQL at `/api/v4/graphql`)
   - Proof Server: port 6300
   - Explorer: port 3000 (optional)
 - **Network ID:** `undeployed` for local, `testnet` for deployment
@@ -114,8 +117,8 @@ The `export ledger` declarations define what's stored on-chain (public). Our con
 ```
 NEXT_PUBLIC_API_URL=http://localhost:8000
 NEXT_PUBLIC_MIDNIGHT_NETWORK=undeployed
-NEXT_PUBLIC_INDEXER_URL=http://127.0.0.1:8088/api/v3/graphql
-NEXT_PUBLIC_INDEXER_WS=ws://127.0.0.1:8088/api/v3/graphql/ws
+NEXT_PUBLIC_INDEXER_URL=http://127.0.0.1:8088/api/v4/graphql
+NEXT_PUBLIC_INDEXER_WS=ws://127.0.0.1:8088/api/v4/graphql/ws
 NEXT_PUBLIC_NODE_URL=http://127.0.0.1:9944
 NEXT_PUBLIC_PROOF_SERVER_URL=http://127.0.0.1:6300
 ```
@@ -124,7 +127,7 @@ NEXT_PUBLIC_PROOF_SERVER_URL=http://127.0.0.1:6300
 ```
 HF_MODEL_NAME=dima806/deepfake_vs_real_image_detection
 MIDNIGHT_NODE_URL=http://127.0.0.1:9944
-MIDNIGHT_INDEXER_URL=http://127.0.0.1:8088/api/v3/graphql
+MIDNIGHT_INDEXER_URL=http://127.0.0.1:8088/api/v4/graphql
 MIDNIGHT_PROOF_SERVER_URL=http://127.0.0.1:6300
 MIDNIGHT_NETWORK_ID=undeployed
 CORS_ORIGINS=http://localhost:3000
