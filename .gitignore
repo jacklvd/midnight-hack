@@ -1,0 +1,196 @@
+# ============================================================
+# Global / OS / Editors
+# ============================================================
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+.*.sw?
+.cache
+
+# Env files (opt-in if a specific one should be committed)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+log.txt
+
+# ============================================================
+# Frontend (client/) — Next.js / Node.js
+# ============================================================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js
+.next/
+out/
+
+# Build output
+build/
+dist/
+
+# Testing
+coverage/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Deployment
+.vercel
+.netlify
+
+# Misc
+*.pem
+
+# ============================================================
+# Backend (backend/) — Python
+# ============================================================
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Databases / ad-hoc test data
+test.db
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+
+# Flask / Scrapy / Celery
+instance/
+.webassets-cache
+.scrapy
+celerybeat-schedule
+celerybeat.pid
+
+# Sphinx / PyBuilder / mkdocs
+docs/_build/
+docs_build/
+site_build/
+.pybuilder/
+target/
+/site
+
+# Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# pyenv / pipenv / poetry / pdm
+# .python-version
+# Pipfile.lock
+# poetry.lock
+# pdm.lock
+.pdm.toml
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# SageMath
+*.sage.py
+
+# Virtual environments
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+env3.*
+env
+/.venv
+*/.venv
+
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+pyrightconfig.json
+
+# Editors (Python-specific)
+.spyderproject
+.spyproject
+.ropeproject
+
+# Poetry local config
+poetry.toml
+
+# Cython debug
+cython_debug/
+
+# Codspeed
+.codspeed
+
+# Misc archives
+docs.zip
+archive.zip
+
+BUILD_PLAN.md
