@@ -1,7 +1,7 @@
-fastapi
-uvicorn
-python-multipart
-transformers
-torch
-pillow
-pydantic-settings
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.9
+transformers==4.44.2
+torch==2.4.1
+pillow==10.4.0
+pydantic-settings==2.5.2
