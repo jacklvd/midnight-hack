@@ -7,7 +7,7 @@ from app.services.midnight_client import midnight_client
 router = APIRouter(tags=["midnight"])
 
 
-@router.post("/api/commit", response_model=CommitResponse)
+@router.post("/commit", response_model=CommitResponse)
 async def commit_verdict(request: CommitRequest) -> CommitResponse:
     try:
         result = await midnight_client.commit_verdict(

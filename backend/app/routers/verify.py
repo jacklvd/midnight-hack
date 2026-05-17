@@ -9,7 +9,7 @@ from app.services.midnight_client import midnight_client
 router = APIRouter(tags=["midnight"])
 
 
-@router.get("/api/verify/{image_hash}", response_model=VerifyResponse)
+@router.get("/verify/{image_hash}", response_model=VerifyResponse)
 async def verify_verdict(
     image_hash: Annotated[str, Path(..., pattern=SHA256_PATTERN)],
 ) -> VerifyResponse:

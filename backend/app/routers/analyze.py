@@ -11,7 +11,7 @@ from app.utils.image_processing import read_image_upload
 router = APIRouter(tags=["analysis"])
 
 
-@router.post("/api/analyze", response_model=AnalysisResponse)
+@router.post("/analyze", response_model=AnalysisResponse)
 async def analyze_upload(file: UploadFile = File(...)) -> AnalysisResponse:
     settings = get_settings()
     image_bytes = await read_image_upload(file, settings.max_upload_size_bytes)
