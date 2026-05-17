@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.models.schemas import HealthResponse
-from app.routers import analyze, commit, verify
+from app.routers import analyze, commit, midnight_info, verify
 
 
 settings = get_settings()
@@ -21,6 +21,7 @@ app.add_middleware(
 app.include_router(analyze.router, prefix=settings.api_prefix)
 app.include_router(commit.router, prefix=settings.api_prefix)
 app.include_router(verify.router, prefix=settings.api_prefix)
+app.include_router(midnight_info.router, prefix=settings.api_prefix)
 
 
 @app.get(f"{settings.api_prefix}/health", response_model=HealthResponse)
