@@ -18,11 +18,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(analyze.router)
-app.include_router(commit.router)
-app.include_router(verify.router)
+app.include_router(analyze.router, prefix=settings.api_prefix)
+app.include_router(commit.router, prefix=settings.api_prefix)
+app.include_router(verify.router, prefix=settings.api_prefix)
 
 
-@app.get("/api/health", response_model=HealthResponse)
+@app.get(f"{settings.api_prefix}/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
     return HealthResponse(status="ok", service=settings.app_name)
