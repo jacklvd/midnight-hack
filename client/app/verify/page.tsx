@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { FormEvent, useState } from 'react'
 import Link from 'next/link'
@@ -41,14 +41,27 @@ export default function VerifyPage() {
       <main className="mx-auto max-w-5xl px-6 py-10">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-secondary-foreground">TruthLens</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Verify a published deepfake analysis</h1>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-secondary-foreground">
+              TruthLens
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Verify a published deepfake analysis
+            </h1>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground">
               Paste a SHA-256 image fingerprint to look up the recorded verdict on Midnight.
             </p>
           </div>
-          <div className="flex gap-3">
-            <Link href="/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium transition hover:bg-muted">
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/how-it-works"
+              className="whitespace-nowrap rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium transition hover:bg-muted"
+            >
+              How it works
+            </Link>
+            <Link
+              href="/"
+              className="whitespace-nowrap rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium transition hover:bg-muted"
+            >
               Back to analysis
             </Link>
           </div>
@@ -72,11 +85,21 @@ export default function VerifyPage() {
               </label>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <Button type="submit" disabled={loading || hash.length === 0}>
-                  {loading ? <span className="flex items-center gap-2"><Spinner className="size-4" /> Verifying...</span> : 'Verify hash'}
+                  {loading ? (
+                    <span className="flex items-center gap-2">
+                      <Spinner className="size-4" /> Verifying...
+                    </span>
+                  ) : (
+                    'Verify hash'
+                  )}
                 </Button>
                 <p className="text-sm text-muted-foreground">Hashes are case-insensitive.</p>
               </div>
-              {error ? <p className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p> : null}
+              {error ? (
+                <p className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                  {error}
+                </p>
+              ) : null}
             </form>
           </CardContent>
         </Card>
@@ -85,16 +108,22 @@ export default function VerifyPage() {
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>Verification result</CardTitle>
-              <CardDescription>{result.exists ? 'Found on Midnight ledger' : 'No verdict found for this hash'}</CardDescription>
+              <CardDescription>
+                {result.exists ? 'Found on Midnight ledger' : 'No verdict found for this hash'}
+              </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-border bg-background p-4">
                 <p className="text-sm text-muted-foreground">Status</p>
-                <p className="mt-2 text-lg font-semibold">{result.exists ? 'Verified' : 'Not found'}</p>
+                <p className="mt-2 text-lg font-semibold">
+                  {result.exists ? 'Verified' : 'Not found'}
+                </p>
               </div>
               <div className="rounded-xl border border-border bg-background p-4">
                 <p className="text-sm text-muted-foreground">Score</p>
-                <p className="mt-2 text-lg font-semibold">{result.score === null ? 'N/A' : `${(result.score * 100).toFixed(1)}%`}</p>
+                <p className="mt-2 text-lg font-semibold">
+                  {result.score === null ? 'N/A' : `${(result.score * 100).toFixed(1)}%`}
+                </p>
               </div>
               <div className="rounded-xl border border-border bg-background p-4">
                 <p className="text-sm text-muted-foreground">Model ID</p>

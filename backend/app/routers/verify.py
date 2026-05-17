@@ -15,6 +15,8 @@ async def verify_verdict(
 ) -> VerifyResponse:
     try:
         result = await midnight_client.get_verdict(image_hash)
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,

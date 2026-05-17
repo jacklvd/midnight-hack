@@ -15,6 +15,8 @@ async def commit_verdict(request: CommitRequest) -> CommitResponse:
             score=request.score,
             model_id=request.model_id,
         )
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,

@@ -8,13 +8,13 @@ import {
   Contract,
   type Ledger,
   ledger,
-} from "../managed/truthlens/contract/index.js";
+} from "./managed/truthlens/contract/index.js";
 import {
   type AnalysisResult,
   type TruthLensPrivateState,
   initialPrivateState,
   witnesses,
-} from "../witnesses.js";
+} from "./witnesses.js";
 
 export class TruthLensSimulator {
   readonly contract: Contract<TruthLensPrivateState>;

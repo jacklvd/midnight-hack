@@ -1,6 +1,6 @@
 import { setNetworkId } from "@midnight-ntwrk/midnight-js-network-id";
 import { describe, it, expect } from "vitest";
-import { TruthLensSimulator } from "./truthlens-simulator.js";
+import { TruthLensSimulator } from "../simulator.js";
 
 setNetworkId("undeployed");
 
